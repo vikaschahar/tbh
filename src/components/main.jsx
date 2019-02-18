@@ -17,6 +17,7 @@ const HeaderStyle = {
     color:'#FFC0CB',
     fontSize:'1em',
     margin:'10px',
+    fontWeight:'800',
 }
 
 const StackedCardsStyle = {
@@ -35,7 +36,7 @@ const Row2Style = {
     alignItems:'center',
     justifyContent:'flex-end',
     overflow:'hidden',
-    padding:'20px',
+    margin:'20px',
     marginBottom:'auto',
 }
 
@@ -47,7 +48,7 @@ const InputStyle = {
     fontSize:'0.6em',
     margin: '8px 0',
     boxSizing: 'border-box',
-    boxShadow:'0px 2px 2px #ffc0cb',
+    boxShadow:'0px 1px 1px #ffc0cb',
 }
 
 const ButtonStyle = {
@@ -68,7 +69,7 @@ export default class Main extends React.Component{
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        this.InstaIdRef = React.createRef;
+        this.InstaIdRef = React.createRef();
     }
 
     handleClick(e){
@@ -77,11 +78,14 @@ export default class Main extends React.Component{
 
         fire.database().ref('InstaId').push( instaId );
 
+        this.props.onSubmit();
+
+        console.log('child component clicked');
     }
 
     render(){
         return(
-            <div className="Main" style={MainStyle}>
+            <div className="Main" style={MainStyle} >
                 <div className="Header" style={HeaderStyle}>
                     Join the queue
                 </div>
