@@ -69,7 +69,20 @@ export default class Main extends React.Component{
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
         this.InstaIdRef = React.createRef();
+    }
+
+    handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            const instaId = this.InstaIdRef.current.value;
+
+            fire.database().ref('InstaId').push( instaId );
+
+            if(instaId !== ''){
+            this.props.onSubmit();
+            }
+          }
     }
 
     handleClick(e){
@@ -78,7 +91,9 @@ export default class Main extends React.Component{
 
         fire.database().ref('InstaId').push( instaId );
 
+        if(instaId !== ''){
         this.props.onSubmit();
+        }
 
         console.log('child component clicked');
     }
@@ -93,7 +108,7 @@ export default class Main extends React.Component{
                     <StackedCards/>
                 </div>
                 <div className="Row2" style={Row2Style}>
-                    <input className="Input" style={InputStyle} type="text" placeholder="Enter Instagram Id" ref={this.InstaIdRef}/>
+                    <input className="Input" style={InputStyle} type="text" placeholder="Enter Instagram Id" ref={this.InstaIdRef} onKeyPress={this.handleKeyPress}/>
                     <button className="Button" style={ButtonStyle} onClick={this.handleClick}>GET IN!</button>
                 </div>
             </div>

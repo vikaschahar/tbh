@@ -16,7 +16,7 @@ class App extends Component {
 
   handleSubmit(){
     this.setState({
-      idSubmitted : false
+      idSubmitted : true
     })
   }
 
