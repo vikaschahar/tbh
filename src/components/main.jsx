@@ -77,11 +77,17 @@ export default class Main extends React.Component{
         if (e.key === 'Enter') {
             const instaId = this.InstaIdRef.current.value;
 
-            fire.database().ref('InstaId').push( instaId );
+            fire.database().ref('InstaId').push().set( instaId );
+            // .then((x)=>{console.log('success',x)})
+            // .catch((error)=>{console.log(error)});
+
+            console.log('instaId', instaId);
 
             if(instaId !== ''){
             this.props.onSubmit();
             }
+
+            console.log('You pressed enter');
           }
     }
 
@@ -89,7 +95,11 @@ export default class Main extends React.Component{
         e.preventDefault();
         const instaId = this.InstaIdRef.current.value;
 
-        fire.database().ref('InstaId').push( instaId );
+        fire.database().ref('InstaId').push().set( instaId );
+            // .then((x)=>{console.log('success',x)})
+            // .catch((error)=>{console.log(error)});
+
+        console.log('instaId', instaId);
 
         if(instaId !== ''){
         this.props.onSubmit();
