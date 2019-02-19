@@ -12,11 +12,24 @@ const StackedCardsStyle = {
     boxShadow:'0px 2px 10px #ffc0cb',
 }
 
-const ImageStyle = {
-    width:'100%',
-    height:'100%',
-    objectFit:'contain',
-}
+// const ImageContainerStyle = {
+//     display:'flex',
+//     height:'100%',
+//     width:'100%',
+//     position:'relative',
+// }
+
+// const ImageStyle = {
+//     maxWidth:'100%',
+//     maxHeight:'100%',
+//     height: 'auto',
+//     width: 'auto',
+//     position: 'absolute',
+//     top: '50%',
+//     left: '50%',
+//     transform: 'translate(-50%, -50%)',
+//     objectFit:'cover',
+// }
 
 export default class StackedCards extends Component {
   render() {
@@ -36,17 +49,14 @@ export default class StackedCards extends Component {
     return (
       <div className="StackedCards" style={StackedCardsStyle}>
         <Slider {...settings}>
-          <div>
-            <img src={this.props.baseUrl + "/TBH Phase1_1.png"} alt="Phase1_1" style={ImageStyle}/>
+          <div >
+            <img src={this.props.baseUrl + "/P1.jpg"} alt="P1"/>
           </div>
-          <div>
-            <img src={this.props.baseUrl + "/TBH Phase1_2.png"} alt="Phase1_2" style={ImageStyle}/>
+          <div >
+            <img src={this.props.baseUrl + "/P2.jpg"} alt="P2"/>
           </div>
-          <div>
-            <img src={this.props.baseUrl + "/TBH Phase1_3.png"} alt="Phase1_3" style={ImageStyle}/>
-          </div>
-          <div>
-            <img src={this.props.baseUrl + "/TBH Phase1_4.png"} alt="Phase1_4" style={ImageStyle}/>
+          <div >
+            <img src={this.props.baseUrl + "/P3.jpg"} alt="P3" />
           </div>
         </Slider>
       </div>
