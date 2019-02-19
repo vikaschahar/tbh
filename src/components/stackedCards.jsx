@@ -32,31 +32,44 @@ const StackedCardsStyle = {
 // }
 
 export default class StackedCards extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {finalImageUrl:"/P1.jpg"};
+    this.updatingImage = this.updatingImage.bind(this);
+  }
+
+  updatingImage(){
+    const items=["/P1.jpg", "/P2.jpg","/P3.jpg"];
+
+    let finalImage = items[Math.floor(Math.random()*items.length)];
+
+    this.setState({
+      finalImageUrl : finalImage
+    })
+  }
+
+  componentWillMount(){
+    setInterval(this.updatingImage, 2000);
+  }
+
   render() {
     const settings = {
       infinite: true,
       autoplay:true,
       speed: 2000,
-      slidesToShow: '1',
+      slidesToShow: '2',
       slidesToScroll: '1',
       autoplaySpeed: 2000,
       cssEase: 'linear',
-      pauseOnHover:'true',
       arrows:false,
-      lazyLoad:true,
     };
 
     return (
       <div className="StackedCards" style={StackedCardsStyle}>
         <Slider {...settings}>
           <div >
-            <img src={this.props.baseUrl + "/P1.jpg"} alt="P1"/>
-          </div>
-          <div >
-            <img src={this.props.baseUrl + "/P2.jpg"} alt="P2"/>
-          </div>
-          <div >
-            <img src={this.props.baseUrl + "/P3.jpg"} alt="P3" />
+            <img src={this.props.baseUrl + this.state.finalImageUrl} alt="P1"/>
           </div>
         </Slider>
       </div>

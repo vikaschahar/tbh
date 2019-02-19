@@ -21,7 +21,6 @@ const HeaderStyle = {
 }
 
 const StackedCardsStyle = {
-    marginTop:'auto',
     margin:'20px',
     display:'flex',
     alignItems:'flex-start',
@@ -62,6 +61,9 @@ const ButtonStyle = {
     cursor:'pointer',
     outline:'none',
     boxShadow:'0px 2px 10px #ffc0cb',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
 }
 
 export default class Main extends React.Component{
