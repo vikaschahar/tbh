@@ -25,7 +25,7 @@ class App extends Component {
     const Component = this.state.idSubmitted ? <Done/> : <Main onSubmit={this.handleSubmit}/>;
 
     return (
-      <div className="App">
+      <div className="App" style = {{backgroundImage: "url('https://media.giphy.com/media/25LxRtoT97mGOfE6Lh/giphy.gif')"}}>
         <header className="App-header">
           {Component}
         </header>

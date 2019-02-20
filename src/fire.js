@@ -1,12 +1,12 @@
 import firebase from 'firebase';
 
 var config = {
-    apiKey: "AIzaSyAK5237lBK9AwGdIYWy3pfEV9rm9hRQUPs",
-    authDomain: "tbh-test1.firebaseapp.com",
-    databaseURL: "https://tbh-test1.firebaseio.com",
-    projectId: "tbh-test1",
-    storageBucket: "tbh-test1.appspot.com",
-    messagingSenderId: "295472752183"
+  apiKey: "AIzaSyAc_jZapeyKfQc06p_7O7qdIYlqJVRyyVg",
+  authDomain: "tbh-insta.firebaseapp.com",
+  databaseURL: "https://tbh-insta.firebaseio.com",
+  projectId: "tbh-insta",
+  storageBucket: "tbh-insta.appspot.com",
+  messagingSenderId: "761120644164"
   };
 
   var fire = firebase.initializeApp(config);

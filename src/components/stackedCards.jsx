@@ -3,13 +3,13 @@ import Slider from "react-slick";
 
 const StackedCardsStyle = {
     display:'flex',
-    //border:'solid 2px #FFC0CB',
+    //border:'solid 2px #E1306C',
     borderRadius:'5px',
     height:'250px',
     width:'250px',
     color:'#ffffff',
     overflow:'hidden',
-    boxShadow:'0px 2px 10px #ffc0cb',
+    boxShadow:'0px 2px 10px #E1306C',
 }
 
 // const ImageContainerStyle = {

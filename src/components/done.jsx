@@ -11,7 +11,7 @@ const DoneStyle = {
 }
 
 const HeaderStyle = {
-    color:'#FFC0CB',
+    color:'#E1306C',
     fontSize:'1em',
     margin:'10px',
     fontWeight:'800',

@@ -14,7 +14,7 @@ const MainStyle = {
 }
 
 const HeaderStyle = {
-    color:'#FFC0CB',
+    color:'#E1306C',
     fontSize:'1em',
     margin:'10px',
     fontWeight:'800',
@@ -43,24 +43,24 @@ const InputStyle = {
     height:'50px',
     padding: '10px 15px 10px',
     borderRadius:'5px',
-    border:'solid 2px #FFC0CB',
+    border:'solid 2px #E1306C',
     fontSize:'0.6em',
     margin: '8px 0',
     boxSizing: 'border-box',
-    boxShadow:'0px 1px 1px #ffc0cb',
+    boxShadow:'0px 1px 1px #E1306C',
 }
 
 const ButtonStyle = {
     padding: '6px 12px',
     borderRadius:'9999px',
-    border:'solid 2px #FFC0CB',
+    border:'solid 2px #E1306C',
     fontSize:'0.6em',
     margin: '10px 0',
     boxSizing: 'border-box',
-    backgroundColor:'#ffc0cb',
+    backgroundColor:'#E1306C',
     cursor:'pointer',
     outline:'none',
-    boxShadow:'0px 2px 10px #ffc0cb',
+    boxShadow:'0px 2px 10px #E1306C',
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
@@ -72,14 +72,14 @@ export default class Main extends React.Component{
         super(props);
         this.handleClick = this.handleClick.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
-        this.InstaIdRef = React.createRef();
+        this.instaIdRef = React.createRef();
     }
 
     handleKeyPress = (e) => {
         if (e.key === 'Enter') {
-            const instaId = this.InstaIdRef.current.value;
+            const instaId = this.instaIdRef.current.value;
 
-            fire.database().ref('InstaId').push().set( instaId );
+            fire.database().ref('instaId').push().set( instaId );
             // .then((x)=>{console.log('success',x)})
             // .catch((error)=>{console.log(error)});
 
@@ -95,9 +95,9 @@ export default class Main extends React.Component{
 
     handleClick(e){
         e.preventDefault();
-        const instaId = this.InstaIdRef.current.value;
+        const instaId = this.instaIdRef.current.value;
 
-        fire.database().ref('InstaId').push().set( instaId );
+        fire.database().ref('instaId').push().set( instaId );
             // .then((x)=>{console.log('success',x)})
             // .catch((error)=>{console.log(error)});
 
@@ -120,7 +120,7 @@ export default class Main extends React.Component{
                     <StackedCards/>
                 </div>
                 <div className="Row2" style={Row2Style}>
-                    <input className="Input" style={InputStyle} type="text" placeholder="Enter Instagram Id" ref={this.InstaIdRef} onKeyPress={this.handleKeyPress}/>
+                    <input className="Input" style={InputStyle} type="text" placeholder="Enter Instagram Id" ref={this.instaIdRef} onKeyPress={this.handleKeyPress}/>
                     <button className="Button" style={ButtonStyle} onClick={this.handleClick}>GET IN!</button>
                 </div>
             </div>
